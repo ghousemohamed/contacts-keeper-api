@@ -7,11 +7,15 @@ const app = express();
 // Connect Database
 connectDB();
 
+app.use((req, res, next)=> {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+})
 // Init Middleware
 app.use(express.json({ extended: false }));
 
 app.get('/', (req, res) => {
-  res.send('This app is online now');
+  res.json({"This application is now online"});
 })
 
 // Define Routes
