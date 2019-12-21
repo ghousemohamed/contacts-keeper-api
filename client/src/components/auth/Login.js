@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
-import AuthContext from '../../context/auth/AuthContext';
-import AlertContext from '../../context/alert/AlertContext';
+import AuthContext from '../../context/auth/authContext';
+import AlertContext from '../../context/alert/alertContext';
 
 const Login = props => {
   const alertContext = useContext(AlertContext);
@@ -51,19 +51,16 @@ const Login = props => {
         <div className='form-group'>
           <label htmlFor='email'>Email Address</label>
           <input
-            id='email'
             type='email'
             name='email'
             value={email}
             onChange={onChange}
             required
-            autoComplete='off'
           />
         </div>
         <div className='form-group'>
           <label htmlFor='password'>Password</label>
           <input
-            id='password'
             type='password'
             name='password'
             value={password}

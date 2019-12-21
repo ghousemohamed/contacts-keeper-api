@@ -1,20 +1,15 @@
-import React, { Fragment, useContext, useEffect } from 'react';
+import React, { Fragment, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import AuthContext from '../../context/auth/AuthContext';
-import ContactContext from '../../context/contact/ContactContext';
+import AuthContext from '../../context/auth/authContext';
+import ContactContext from '../../context/contact/contactContext';
 
 const Navbar = ({ title, icon }) => {
   const authContext = useContext(AuthContext);
   const contactContext = useContext(ContactContext);
 
-  const { isAuthenticated, logout, user, loadUser } = authContext;
+  const { isAuthenticated, logout, user } = authContext;
   const { clearContacts } = contactContext;
-
-  useEffect(() => {
-    loadUser();
-    // eslint-disable-next-line
-  }, []);
 
   const onLogout = () => {
     logout();
@@ -47,9 +42,7 @@ const Navbar = ({ title, icon }) => {
   return (
     <div className='navbar bg-primary'>
       <h1>
-        <Link to='/'>
-          <i className={icon} /> {title}
-        </Link>
+        <i className={icon} /> {title}
       </h1>
       <ul>{isAuthenticated ? authLinks : guestLinks}</ul>
     </div>
@@ -62,7 +55,7 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  title: 'Contact Keeper',
+  title: 'Contact Repository',
   icon: 'fas fa-id-card-alt'
 };
 

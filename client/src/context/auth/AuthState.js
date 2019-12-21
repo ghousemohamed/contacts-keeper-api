@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
-import AuthContext from './AuthContext';
+import AuthContext from './authContext';
 import authReducer from './authReducer';
 import setAuthToken from '../../utils/setAuthToken';
 import {
@@ -27,10 +27,12 @@ const AuthState = props => {
 
   // Load User
   const loadUser = async () => {
-    setAuthToken(localStorage.token);
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
 
     try {
-      const res = await axios.get('https://git.heroku.com/vast-escarpment-29433.git/api/auth');
+      const res = await axios.get('/api/auth');
 
       dispatch({
         type: USER_LOADED,
@@ -50,7 +52,7 @@ const AuthState = props => {
     };
 
     try {
-      const res = await axios.post('https://git.heroku.com/vast-escarpment-29433.git/api/users', formData, config);
+      const res = await axios.post('/api/users', formData, config);
 
       dispatch({
         type: REGISTER_SUCCESS,
@@ -75,7 +77,7 @@ const AuthState = props => {
     };
 
     try {
-      const res = await axios.post('https://git.heroku.com/vast-escarpment-29433.git/api/auth', formData, config);
+      const res = await axios.post('/api/auth', formData, config);
 
       dispatch({
         type: LOGIN_SUCCESS,

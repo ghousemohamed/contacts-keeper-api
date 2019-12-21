@@ -1,26 +1,17 @@
-# Contact Keeper
+# Contacts Repository
 
-> Full stack MERN contact manager with React hooks, context & JWT authentication. Part of my React course on Udemy.
+> A full stack MERN application that lets the user store and filter contacts, and perform CRUD functionalities on them. 
 
-This is the full app. The API can be found [here](https://github.com/bradtraversy/contact_keeper_api) with documented endpoints
+Live site: https://contacts-repo.herokuapp.com/login
 
-## Usage
+# Locally Running
 
-Install dependencies
+> Client: https://localhost/3000
+> Server: https://localhost/5000
 
-```bash
-npm install
-npm client-install
-```
+Command: npm run dev (Ran using concurrently package that runs both client and server concurrently)
 
-### Mongo connection setup
 
-Edit your /config/default.json file to include the correct MongoDB URI
 
-### Run Server
 
-```bash
-npm run dev     # Express & React :3000 & :5000
-npm run server  # Express API Only :5000
-npm run client  # React Client Only :3000
-```
+
