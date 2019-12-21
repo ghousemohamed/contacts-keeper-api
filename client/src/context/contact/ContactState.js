@@ -28,7 +28,7 @@ const ContactState = props => {
   // Get Contacts
   const getContacts = async () => {
     try {
-      const res = await axios.get('/api/contacts');
+      const res = await axios.get('https://git.heroku.com/vast-escarpment-29433.git/api/contacts');
 
       dispatch({
         type: GET_CONTACTS,
@@ -51,7 +51,7 @@ const ContactState = props => {
     };
 
     try {
-      const res = await axios.post('/api/contacts', contact, config);
+      const res = await axios.post('https://git.heroku.com/vast-escarpment-29433.git/api/contacts', contact, config);
 
       dispatch({
         type: ADD_CONTACT,
@@ -68,7 +68,7 @@ const ContactState = props => {
   // Delete Contact
   const deleteContact = async id => {
     try {
-      await axios.delete(`/api/contacts/${id}`);
+      await axios.delete(`https://git.heroku.com/vast-escarpment-29433.git/api/contacts/${id}`);
 
       dispatch({
         type: DELETE_CONTACT,
@@ -92,7 +92,7 @@ const ContactState = props => {
 
     try {
       const res = await axios.put(
-        `/api/contacts/${contact._id}`,
+        `https://git.heroku.com/vast-escarpment-29433.git/api/contacts/${contact._id}`,
         contact,
         config
       );
