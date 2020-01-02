@@ -7,7 +7,7 @@ import {
   UPDATE_CONTACT,
   FILTER_CONTACTS,
   CLEAR_FILTER,
-  CONTACT_ERROR,
+  CONTACT_ERROR, 
   CLEAR_CONTACTS
 } from '../types';
 
