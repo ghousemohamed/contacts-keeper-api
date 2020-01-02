@@ -32,5 +32,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://git.heroku.com/fierce-coast-37228.git"
+  "proxy": "http://localhost:5000"
 }
